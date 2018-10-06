@@ -6,7 +6,6 @@ echo "BEFORE YOU PROCEED MAKE SURE YOUR GUI WALLET (WIN/MAC) IS UPDATED ALREADY!
 echo "Enter 1 to update, enter 2 to check status (Press enter after) ONLY UPDATE ONCE!!!!!"
 read UPDATE
 
-
 if [[ $UPDATE =~ "1" ]] ; then
     echo "You have to go to your GUI Wallet now and restart ALL nodes on it! before you continue! Type yes to proceed"
     read OK
@@ -16,13 +15,12 @@ if [[ $UPDATE =~ "1" ]] ; then
         sh $filename stop
       done
 
-      # update wallet
-      wget https://github.com/bitcoingreen/bitcoingreen/releases/download/1.2.2/bitcoingreen-1.2.2-x86_64-linux-gnu.tar.gz
-      tar -xzf bitcoingreen-1.2.2-x86_64-linux-gnu.tar.gz
-      chmod 755 bitcoingreen-1.2.2/bin/*
+      wget https://github.com/bitcoingreen/bitcoingreen/releases/download/v1.3.0/bitcoingreen-1.3.0-x86_64-linux-gnu.tar.gz
+      tar -xzf bitcoingreen-1.3.0-x86_64-linux-gnu.tar.gz
+      chmod 755 bitcoingreen-1.3.0/bin/*
       rm /usr/bin/bitcoingreen*
-      mv bitcoingreen-1.2.2/bin/bitcoingreen* /usr/bin
-      rm -r bitcoingreen-1.2.2
+      mv bitcoingreen-1.3.0/bin/bitcoingreen* /usr/bin
+      rm -r bitcoingreen-1.3.0
 
       rm .bitcoingreen_*/mn*
 
@@ -30,7 +28,7 @@ if [[ $UPDATE =~ "1" ]] ; then
       sleep 60
 
       for filename in bin/bitcoingreend_*.sh; do
-        sh $filename -resync
+        sh $filename
       done
       echo "Wait for blockchain to restart... (ca 3 mins)"
 
