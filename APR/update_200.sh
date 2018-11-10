@@ -21,6 +21,8 @@ if [[ $UPDATE =~ "1" ]] ; then
       sudo chmod 755 aprcoin*
       sudo mv aprcoin* /usr/bin
 
+      sudo apt-get install libzmq-5* -y
+
       rm .apr*/mn*
 
       echo "Wait for shutdowns..."

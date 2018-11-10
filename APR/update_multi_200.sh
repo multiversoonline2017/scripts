@@ -11,6 +11,7 @@ if [[ $UPDATE =~ "1" ]] ; then
     read OK
     if [[ $OK =~ "yes" ]]; then
 
+      sudo apt-get install libzmq-5* -y
       for filename in bin/aprcoin-cli_*.sh; do
         sh $filename stop
       done
