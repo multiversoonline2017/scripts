@@ -21,7 +21,7 @@ if [[ $UPDATE =~ "1" ]] ; then
       sudo chmod 755 aprcoin*
       sudo mv aprcoin* /usr/bin
 
-      sudo apt-get install libzmq-5* -y
+     sudo apt-get update && sudo apt-get install libzmq-5* -y
 
       rm .apr*/mn*
 

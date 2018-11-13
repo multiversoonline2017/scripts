@@ -32,7 +32,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
   sudo add-apt-repository  -y  ppa:bitcoin/bitcoin
   sudo apt-get update
   sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-  sudo apt-get install libzmq-5* -y
+  sudo apt-get update && sudo apt-get install libzmq-5* -y
 
   cd /var
   sudo touch swap.img
