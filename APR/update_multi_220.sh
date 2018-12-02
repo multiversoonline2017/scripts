@@ -16,7 +16,7 @@ if [[ $UPDATE =~ "1" ]] ; then
       done
 
       ## COMPILE AND INSTALL
-      wget  https://github.com/APRCoin/zenith-repository/releases/download/V2.2/aprcoin-v2.2.0-linux.zip  
+      wget https://github.com/APRCoin/zenith-repository/releases/download/V2.2/aprcoin-v2.2.0-linux.zip
       unzip aprcoin-v2.2.0-linux.zip
       sudo chmod 755 Ubuntu/aprcoin*
       sudo mv Ubuntu/aprcoin* /usr/bin

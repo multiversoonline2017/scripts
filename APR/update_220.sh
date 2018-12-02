@@ -7,26 +7,27 @@ echo "Enter 1 to update, enter 2 to check status (Press enter after) ONLY UPDATE
 read UPDATE
 
 if [[ $UPDATE =~ "1" ]] ; then
-    echo "We will now update your nodes! Type yes to proceed"
+    echo "This will stop and resync your node! Type yes to proceed"
     read OK
     if [[ $OK =~ "yes" ]]; then
 
       aprcoin-cli stop
 
       ## COMPILE AND INSTALL
-      wget  https://github.com/APRCoin/zenith-repository/releases/download/V2.2/aprcoin-v2.2.0-linux.zip  
+      wget https://github.com/APRCoin/zenith-repository/releases/download/V2.2/aprcoin-v2.2.0-linux.zip
       unzip aprcoin-v2.2.0-linux.zip
       sudo chmod 755 Ubuntu/aprcoin*
       sudo mv Ubuntu/aprcoin* /usr/bin
+      sudo mv aprcoin* /usr/bin
 
-      sudo apt-get update && sudo apt-get install libzmq-5* -y
+     sudo apt-get update && sudo apt-get install libzmq-5* -y
 
       rm .apr*/mn*
 
       echo "Wait for shutdowns..."
       sleep 60
 
-      aprcoind
+      aprcoind -resync
 
       echo "Wait for blockchain to restart... (ca 3 mins)"
 
