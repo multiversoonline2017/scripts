@@ -7,7 +7,7 @@ echo "Enter 1 to update, enter 2 to check status (Press enter after) ONLY UPDATE
 read UPDATE
 
 if [[ $UPDATE =~ "1" ]] ; then
-    echo "This will stop and resync your node! Type yes to proceed"
+    echo "This will stop update your node! Type yes to proceed"
     read OK
     if [[ $OK =~ "yes" ]]; then
 
