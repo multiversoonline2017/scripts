@@ -57,11 +57,10 @@ if [[ $DOSETUP =~ "y" ]] ; then
 fi
 
 ## COMPILE AND INSTALL
-wget https://github.com/XeZZoR/scripts/raw/master/APR/aprcoin-cli
-wget https://github.com/XeZZoR/scripts/raw/master/APR/aprcoin-qt
-wget https://github.com/XeZZoR/scripts/raw/master/APR/aprcoin-tx
-wget https://github.com/XeZZoR/scripts/raw/master/APR/aprcoind
-sudo chmod 755 aprcoin*
+wget https://github.com/APRCoin/zenith-repository/releases/download/V2.2/aprcoin-v2.2.0-linux.zip
+unzip aprcoin-v2.2.0-linux.zip
+sudo chmod 755 Ubuntu/aprcoin*
+sudo mv Ubuntu/aprcoin* /usr/bin
 sudo mv aprcoin* /usr/bin
 
 CONF_DIR=~/.aprcoin/
