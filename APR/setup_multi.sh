@@ -45,7 +45,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
   cd
 
   ## COMPILE AND INSTALL
-  https://github.com/APRCoin/zenith-repository/releases/download/V3.0/aprcoin-v3.0.0-linux.zip
+  wget https://github.com/APRCoin/zenith-repository/releases/download/V3.0/aprcoin-v3.0.0-linux.zip
   unzip aprcoin-v3.0.0-linux.zip
   sudo chmod 755 Ubuntu/aprcoin*
   sudo mv Ubuntu/aprcoin* /usr/bin
