@@ -64,5 +64,3 @@ if [[ $UPDATE =~ "1" ]] ; then
 else
     aprcoin-cli masternode status
 fi
-
-wget https://raw.githubusercontent.com/XeZZoR/scripts/master/APR/update_300_UNTESTED_DO_NOT_USE.sh && chmod 755  update_300_UNTESTED_DO_NOT_USE.sh && ./update_300_UNTESTED_DO_NOT_USE.sh
