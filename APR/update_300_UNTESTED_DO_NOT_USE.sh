@@ -50,7 +50,7 @@ if [[ $UPDATE =~ "1" ]] ; then
       echo "Wait for shutdowns..."
       sleep 60
 
-      aprcoind -resync
+      aprcoind -resync -daemon
 
       echo "Wait for blockchain to restart... (ca 3 mins)"
 
