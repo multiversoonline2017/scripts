@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 cd ~
 echo "****************************************************************************"
@@ -45,8 +45,8 @@ if [[ $DOSETUP =~ "y" ]] ; then
   cd
 
   ## COMPILE AND INSTALL
-  wget https://github.com/APRCoin/zenith-repository/releases/download/V2.2/aprcoin-v2.2.0-linux.zip
-  unzip aprcoin-v2.2.0-linux.zip
+  https://github.com/APRCoin/zenith-repository/releases/download/V3.0/aprcoin-v3.0.0-linux.zip
+  unzip aprcoin-v3.0.0-linux.zip
   sudo chmod 755 Ubuntu/aprcoin*
   sudo mv Ubuntu/aprcoin* /usr/bin
   sudo mv aprcoin* /usr/bin
@@ -126,36 +126,29 @@ for i in `seq 1 1 $MNCOUNT`; do
   echo "masternodeaddr=$IP:$PORT" >> ${NAME}.conf_TEMP
   echo "masternodeprivkey=$PRIVKEY" >> ${NAME}.conf_TEMP
 
-  echo "addnode=[2001:0:4137:9e76:144f:1354:bb79:a4a3]:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:6abd:286e:1da0:230f:9a1]:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=209.250.240.35:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=64.154.38.181:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=18.219.234.121:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=63.209.35.108:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=45.76.5.59:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=206.189.160.179:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:953c:280f:21e5:3944:e3ed]:51090" >> $CONF_DIR/$CONF_FILE
-echo "addnode=52.15.56.27:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=68.168.84.90:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:953c:2818:35e9:ed24:395a]:49792"  >> $CONF_DIR/$CONF_FILE
-echo "addnode=140.82.54.120:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:90d7:c6b:25ed:c93e:f2b9]:55251"  >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:953c:1097:b40:cbf0:653d]:50345" >> $CONF_DIR/$CONF_FILE
-echo "addnode=209.246.143.117:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=199.247.21.63:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:4137:9e76:c5:14fb:dc4e:f39e]:58011" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:953c:286e:3c12:dc5f:5901]:62148" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:4137:9e76:187c:2ec0:bd54:a150]:60272" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:6ab8:3038:1517:b8c6:f4b7]:49644" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:90d7:347c:15b8:f280:11d5]:54765" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:19f0:5:903:5400:1ff:fe78:434f]:45684" >> $CONF_DIR/$CONF_FILE
-echo "addnode=136.144.177.141:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:953c:3c5d:2ae9:ed23:518d]:50841" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:4137:9e76:3ce5:fbff:b2c5:df56]:59152" >> $CONF_DIR/$CONF_FILE
-echo "addnode=185.223.28.179:3133" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:5ef5:79fb:30c7:e6f:e73b:d6bc]:64296" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:9d38:953c:2877:26a0:ed13:4371]:50111" >> $CONF_DIR/$CONF_FILE
-echo "addnode=[2001:0:4137:9e76:8e1:15b4:a310:7243]:3133" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=45.77.227.93" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=18.191.175.138" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=18.188.93.12" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=85.214.199.57" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=18.222.190.189" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=3.16.148.30" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=209.97.183.127" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=3.16.166.214" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=108.61.175.177" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=142.93.32.206" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=178.128.166.102" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=140.82.29.242" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=104.156.232.221" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=167.99.160.210" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=52.14.225.17" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=3.16.29.195" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=18.220.105.129" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=18.224.183.32" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=18.218.246.251" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=95.179.139.68" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=3.16.10.163" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=18.188.164.171" >> $CONF_DIR/$CONF_FILE
+    echo "addnode=3.16.125.132" >> $CONF_DIR/$CONF_FILE
 
 
   sudo ufw allow $PORT/tcp
