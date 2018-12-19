@@ -66,7 +66,7 @@ sudo mv aprcoin* /usr/bin
 CONF_DIR=~/.aprcoin/
 mkdir $CONF_DIR
 CONF_FILE=aprcoin.conf
-PORT=3133
+PORT=3134
 
 wget https://github.com/XeZZoR/scripts/raw/master/APR/peers.dat -O $CONF_DIR/peers.dat
 
