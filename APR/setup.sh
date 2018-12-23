@@ -83,7 +83,7 @@ echo "listen=1" >> $CONF_DIR/$CONF_FILE
 echo "server=1" >> $CONF_DIR/$CONF_FILE
 echo "daemon=1" >> $CONF_DIR/$CONF_FILE
 echo "logtimestamps=1" >> $CONF_DIR/$CONF_FILE
-echo "maxconnections=256" >> $CONF_DIR/$CONF_FILE
+echo "maxconnections=16" >> $CONF_DIR/$CONF_FILE
 echo "masternode=1" >> $CONF_DIR/$CONF_FILE
 echo "" >> $CONF_DIR/$CONF_FILE
 echo "" >> $CONF_DIR/$CONF_FILE
@@ -91,18 +91,18 @@ echo "port=$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeaddr=$IP:$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
 
-echo "addnode=addnode=142.93.142.33" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=206.189.160.179" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=178.128.166.102" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=167.99.171.144" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=209.97.183.237" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=104.248.244.144" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=159.89.207.84" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=80.85.158.36" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=91.211.248.160" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=164.132.135.102" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=185.235.131.132" >> $CONF_DIR/$CONF_FILE
-echo "addnode=addnode=178.159.38.187" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=142.93.142.33" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=206.189.160.179" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=178.128.166.102" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=167.99.171.144" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=209.97.183.237" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=104.248.244.144" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=159.89.207.84" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=80.85.158.36" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=91.211.248.160" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=164.132.135.102" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=185.235.131.132" >> $CONF_DIR/$CONF_FILE
+echo "=addnode=178.159.38.187" >> $CONF_DIR/$CONF_FILE
 sudo ufw allow $PORT/tcp
 
 

@@ -117,7 +117,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   echo "server=1" >> ${NAME}.conf_TEMP
   echo "daemon=1" >> ${NAME}.conf_TEMP
   echo "logtimestamps=1" >> ${NAME}.conf_TEMP
-  echo "maxconnections=256" >> ${NAME}.conf_TEMP
+  echo "maxconnections=16" >> ${NAME}.conf_TEMP
   echo "masternode=1" >> ${NAME}.conf_TEMP
   echo "" >> ${NAME}.conf_TEMP
 
@@ -126,18 +126,18 @@ for i in `seq 1 1 $MNCOUNT`; do
   echo "masternodeaddr=$IP:$PORT" >> ${NAME}.conf_TEMP
   echo "masternodeprivkey=$PRIVKEY" >> ${NAME}.conf_TEMP
 
-  echo "addnode=addnode=142.93.142.33" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=206.189.160.179" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=178.128.166.102" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=167.99.171.144" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=209.97.183.237" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=104.248.244.144" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=159.89.207.84" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=80.85.158.36" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=91.211.248.160" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=164.132.135.102" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=185.235.131.132" >> $CONF_DIR/$CONF_FILE
-  echo "addnode=addnode=178.159.38.187" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=142.93.142.33" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=206.189.160.179" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=178.128.166.102" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=167.99.171.144" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=209.97.183.237" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=104.248.244.144" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=159.89.207.84" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=80.85.158.36" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=91.211.248.160" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=164.132.135.102" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=185.235.131.132" >> $CONF_DIR/$CONF_FILE
+  echo "=addnode=178.159.38.187" >> $CONF_DIR/$CONF_FILE
   sudo ufw allow $PORT/tcp
 
   mv ${NAME}.conf_TEMP $CONF_DIR/${NAME}.conf
