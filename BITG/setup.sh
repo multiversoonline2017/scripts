@@ -117,7 +117,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   echo "server=1" >> bitcoingreen.conf_TEMP
   echo "daemon=1" >> bitcoingreen.conf_TEMP
   echo "logtimestamps=1" >> bitcoingreen.conf_TEMP
-  echo "maxconnections=256" >> bitcoingreen.conf_TEMP
+  echo "maxconnections=16" >> bitcoingreen.conf_TEMP
   echo "masternode=1" >> bitcoingreen.conf_TEMP
   echo "" >> bitcoingreen.conf_TEMP
 
