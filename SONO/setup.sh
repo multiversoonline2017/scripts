@@ -43,11 +43,6 @@ if [[ $DOSETUP =~ "y" ]] ; then
   sudo echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
   cd
 
-  ## COMPILE AND INSTALL
-  wget https://github.com/zPools/sonoa/releases/download/2.0/SONOd
-  chmod 755 SONOd
-  mv SONOd /usr/bin
-
   sudo apt-get install -y ufw
   sudo ufw allow ssh/tcp
   sudo ufw limit ssh/tcp
@@ -59,6 +54,10 @@ if [[ $DOSETUP =~ "y" ]] ; then
   echo 'export PATH=~/bin:$PATH' > ~/.bash_aliases
   source ~/.bashrc
 fi
+## COMPILE AND INSTALL
+wget https://github.com/zPools/sonoa/releases/download/2.0.2.1/SONOd
+chmod 755 SONOd
+mv SONOd /usr/bin
 
 ## Setup conf
 mkdir -p ~/bin
