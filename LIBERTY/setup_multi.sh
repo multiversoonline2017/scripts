@@ -19,20 +19,11 @@ read DOSETUP
 
 if [[ $DOSETUP =~ "y" ]] ; then
   sudo apt-get update
-  sudo apt-get -y upgrade
-  sudo apt-get -y dist-upgrade
-  sudo apt-get install -y nano htop git
-  sudo apt-get install -y software-properties-common
-  sudo apt-get install -y build-essential libtool autotools-dev pkg-config libssl-dev
-  sudo apt-get install -y libboost-all-dev
-  sudo apt-get install -y libevent-dev
-  sudo apt-get install -y libminiupnpc-dev
-  sudo apt-get install -y autoconf
-  sudo apt-get install -y automake unzip
-  sudo add-apt-repository  -y  ppa:bitcoin/bitcoin
-  sudo apt-get update
-  sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-  sudo apt-get install libzmq-5* -y
+  sudo apt-get upgrade
+  sudo apt install make
+  sudo apt install aptitude -y
+  sudo apt-get update -y
+  sudo apt-get upgrade -y
   sudo apt-get install -y ufw
   sudo ufw allow 22/tcp
   sudo ufw limit 22/tcp
@@ -51,10 +42,11 @@ if [[ $DOSETUP =~ "y" ]] ; then
 
   ## COMPILE AND INSTALL
   wget https://s3.amazonaws.com/liberty-builds/5.2.1.0/linux-x64.tar.gz
-  wget tar xvzf linux-x64.tar.gz
+  tar xvzf linux-x64.tar.gz
   sudo chmod 755 liberty*
+  sudo mv liberty* /usr/bin
   sudo rm linux-x64.tar.gz
-  sudo mv liberty* /usr/local/bin
+  
   
   mkdir -p ~/bin
   echo 'export PATH=~/bin:$PATH' > ~/.bash_aliases
@@ -64,7 +56,6 @@ fi
 ## Setup conf
 mkdir -p ~/bin
 IP=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
-wget https://github.com/XeZZoR/scripts/raw/master/APR/peers.dat -O apr_peers.dat
 NAME="libertycoin"
 
 
@@ -82,11 +73,11 @@ for i in `seq 1 1 $MNCOUNT`; do
   read ALIAS  
 
   echo ""
-  echo "Enter port for node $ALIAS (Any valid free port matching config from steps before: i.E. 8001)"
+  echo "Enter port for node $ALIAS (Any valid free port matching config from steps before: i.E. 10417)"
   read PORT
 
   echo ""
-  echo "Enter RPC Port (Any valid free port: i.E. 9001)"
+  echo "Enter RPC Port (Any valid free port: i.E. 11417)"
   read RPCPORT
 
   echo ""
@@ -139,7 +130,6 @@ for i in `seq 1 1 $MNCOUNT`; do
   sudo ufw allow $PORT/tcp
 
   mv ${NAME}.conf_TEMP $CONF_DIR/${NAME}.conf
-  cp apr_peers.dat $CONF_DIR/peers.dat
-  
+    
   sh ~/bin/${NAME}d_$ALIAS.sh
 done
